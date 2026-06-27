@@ -70,24 +70,12 @@ export function About() {
 
         {/* Content Grid */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 gap-12"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
         >
-          {/* Left - Photo Placeholder */}
-          <motion.div variants={itemVariants}>
-            <div className="glass-card p-8 aspect-square flex items-center justify-center relative overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-neon-purple/20 to-neon-blue/20 rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 bg-muted rounded-full flex items-center justify-center">
-                    <span className="text-4xl">📷</span>
-                  </div>
-                  <p className="text-muted-foreground">Professional Photo</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          
 
           {/* Right - Description */}
           <motion.div variants={itemVariants} className="flex flex-col gap-6">
@@ -158,3 +146,5 @@ export function About() {
     </section>
   );
 }
+
+

@@ -122,6 +122,7 @@ export function Hero() {
                 className="premium-button px-8 py-3 border border-neon-purple text-neon-purple rounded-lg font-semibold flex items-center gap-2 hover:bg-neon-purple/10"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 View Projects
                 <ArrowRight size={20} />
@@ -131,6 +132,7 @@ export function Hero() {
                 className="premium-button px-8 py-3 border border-neon-blue text-neon-blue rounded-lg font-semibold flex items-center gap-2 hover:bg-neon-blue/10"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => window.location.href = 'mailto:arunpaul7878@gmail.com'}
               >
                 <Mail size={20} />
                 Contact Me
@@ -143,7 +145,7 @@ export function Hero() {
               className="flex gap-6 pt-4"
             >
               <motion.a
-                href="https://github.com"
+                href="https://github.com/aruun07"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-neon-purple transition-colors"
@@ -155,7 +157,7 @@ export function Hero() {
               </motion.a>
 
               <motion.a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/arunangshu-paul-b9909a2aa/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-neon-blue transition-colors"
@@ -167,7 +169,7 @@ export function Hero() {
               </motion.a>
 
               <motion.a
-                href="mailto:contact@example.com"
+                href="mailto:arunpaul7878@gmail.com"
                 className="text-muted-foreground hover:text-neon-pink transition-colors"
                 whileHover={{ scale: 1.2, rotate: 10 }}
               >
@@ -233,3 +235,5 @@ export function Hero() {
     </section>
   );
 }
+
+
