@@ -1,0 +1,327 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Premium Dark Theme - Cyberpunk Minimalism */
+  --primary: #A855F7; /* Neon Purple */
+  --primary-foreground: #E8E8E8;
+  --sidebar-primary: #A855F7;
+  --sidebar-primary-foreground: #E8E8E8;
+  --chart-1: #A855F7;
+  --chart-2: #3B82F6;
+  --chart-3: #7C3AED;
+  --chart-4: #EC4899;
+  --chart-5: #06B6D4;
+  --radius: 0.75rem;
+  /* Dark backgrounds */
+  --background: #050505; /* Pure black */
+  --foreground: #E8E8E8; /* Off-white */
+  --card: #111111; /* Dark gray */
+  --card-foreground: #E8E8E8;
+  --popover: #111111;
+  --popover-foreground: #E8E8E8;
+  --secondary: #1F2937; /* Darker gray */
+  --secondary-foreground: #D1D5DB;
+  --muted: #374151;
+  --muted-foreground: #9CA3AF;
+  --accent: #A855F7; /* Neon Purple */
+  --accent-foreground: #050505;
+  --destructive: #EF4444;
+  --destructive-foreground: #050505;
+  --border: #1F2937;
+  --input: #1F2937;
+  --ring: #A855F7;
+  --sidebar: #111111;
+  --sidebar-foreground: #E8E8E8;
+  --sidebar-accent: #A855F7;
+  --sidebar-accent-foreground: #050505;
+  --sidebar-border: #1F2937;
+  --sidebar-ring: #A855F7;
+  /* Custom brand colors */
+  --neon-purple: #A855F7;
+  --neon-blue: #3B82F6;
+  --neon-pink: #EC4899;
+  --neon-cyan: #06B6D4;
+}
+
+.dark {
+  /* Dark theme is the default - same as root */
+  --primary: #A855F7;
+  --primary-foreground: #E8E8E8;
+  --sidebar-primary: #A855F7;
+  --sidebar-primary-foreground: #E8E8E8;
+  --background: #050505;
+  --foreground: #E8E8E8;
+  --card: #111111;
+  --card-foreground: #E8E8E8;
+  --popover: #111111;
+  --popover-foreground: #E8E8E8;
+  --secondary: #1F2937;
+  --secondary-foreground: #D1D5DB;
+  --muted: #374151;
+  --muted-foreground: #9CA3AF;
+  --accent: #A855F7;
+  --accent-foreground: #050505;
+  --destructive: #EF4444;
+  --destructive-foreground: #050505;
+  --border: #1F2937;
+  --input: #1F2937;
+  --ring: #A855F7;
+  --chart-1: #A855F7;
+  --chart-2: #3B82F6;
+  --chart-3: #7C3AED;
+  --chart-4: #EC4899;
+  --chart-5: #06B6D4;
+  --sidebar: #111111;
+  --sidebar-foreground: #E8E8E8;
+  --sidebar-accent: #A855F7;
+  --sidebar-accent-foreground: #050505;
+  --sidebar-border: #1F2937;
+  --sidebar-ring: #A855F7;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  
+  h1 { font-size: 3.5rem; font-weight: 800; }
+  h2 { font-size: 2.5rem; font-weight: 700; }
+  h3 { font-size: 1.875rem; font-weight: 700; }
+  h4 { font-size: 1.5rem; font-weight: 600; }
+  h5 { font-size: 1.25rem; font-weight: 600; }
+  h6 { font-size: 1rem; font-weight: 600; }
+  
+  code, pre {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+  }
+  
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+}
+
+  /* Glass card with neon glow */
+  .glass-card {
+    background: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(168, 85, 247, 0.1);
+    border-radius: 0.75rem;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .glass-card:hover {
+    background: rgba(17, 17, 17, 0.8);
+    border-color: rgba(168, 85, 247, 0.3);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #A855F7 0%, #3B82F6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Neon glow effect */
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), inset 0 0 20px rgba(168, 85, 247, 0.1);
+  }
+  
+  /* Premium button base */
+  .premium-button {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .premium-button:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Hover tilt effect for cards */
+  .tilt-card {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .tilt-card:hover {
+    transform: rotateX(5deg) rotateY(5deg);
+  }
+
+  /* Animated gradient background */
+  .animated-gradient {
+    background: linear-gradient(-45deg, #A855F7, #3B82F6, #EC4899, #06B6D4);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Pulse animation */
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.6); }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Shimmer effect */
+  @keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Smooth text reveal */
+  @keyframes text-reveal {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .text-reveal {
+    animation: text-reveal 0.6s ease-out forwards;
+  }
+
+  /* Stagger animation helper */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
