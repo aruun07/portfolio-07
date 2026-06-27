@@ -112,7 +112,7 @@ export function Hero() {
                 className="premium-button px-8 py-3 bg-gradient-to-r from-neon-purple to-neon-blue text-white rounded-lg font-semibold flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('https://drive.google.com/uc?export=download&id=1FXYYCuwoan2UoalnvbFsAC7t68k8Cpgv', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/1FXYYCuwoan2UoalnvbFsAC7t68k8Cpgv/view?usp=sharing', '_blank')}
               >
                 <Download size={20} />
                 Download Resume
@@ -235,6 +235,7 @@ export function Hero() {
     </section>
   );
 }
+
 
 
 
